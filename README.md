@@ -12,19 +12,43 @@ The default output is 1080p: `1920x1080`, `30 fps`, H.264 MP4.
 
 No npm packages are required.
 
+## Install Dependencies With Codex
+
+After installing the skill, ask Codex:
+
+```text
+Check the web scroll video dependencies and install anything missing.
+```
+
+Codex should verify:
+
+```bash
+node --version
+ffmpeg -version
+```
+
+On macOS with Homebrew, missing dependencies can usually be installed with:
+
+```bash
+brew install node ffmpeg
+brew install --cask google-chrome
+```
+
+If Chrome is already installed somewhere nonstandard, pass its path with `--chrome-path` or set `CHROME_PATH`.
+
 ## Install From GitHub
 
 To share this as a Codex skill, publish this folder to a GitHub repository. Other users can install it by asking Codex:
 
 ```text
-Install the web scroll video skill from https://github.com/<owner>/<repo>
+Install the web scroll video skill from https://github.com/upenn/web-scroll-video
 ```
 
 Manual install:
 
 ```bash
 mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills"
-git clone https://github.com/<owner>/<repo>.git \
+git clone https://github.com/upenn/web-scroll-video.git \
   "${CODEX_HOME:-$HOME/.codex}/skills/web-scroll-video"
 ```
 
@@ -34,7 +58,7 @@ If using the Codex skill installer helper directly:
 
 ```bash
 python3 "${CODEX_HOME:-$HOME/.codex}/skills/.system/skill-installer/scripts/install-skill-from-github.py" \
-  --repo <owner>/<repo> \
+  --repo upenn/web-scroll-video \
   --path . \
   --name web-scroll-video
 ```
