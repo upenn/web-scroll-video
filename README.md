@@ -32,7 +32,7 @@ Codex will create a cue sheet, render the MP4, and keep the cue sheet and video 
 - Google Chrome, Chromium, or Microsoft Edge
 - `ffmpeg`
 
-No npm packages are required. Codex can check and help install these dependencies.
+No npm packages are required for this tool. Codex can check and help install these dependencies. `npm` is only needed if you are installing the Codex CLI itself or managing Node.js on a command-line machine.
 
 ## Manual Install Reference
 
@@ -60,6 +60,20 @@ On macOS with Homebrew, missing dependencies can usually be installed with:
 ```bash
 brew install node ffmpeg
 brew install --cask google-chrome
+```
+
+On a fresh Debian or Ubuntu VM, Codex can install the browser and video tools with commands like:
+
+```bash
+sudo apt-get update
+sudo apt-get install -y chromium chromium-sandbox ffmpeg git ca-certificates fonts-liberation
+```
+
+If you are testing from the command line on a Linux VM and need to install Codex first, install Node.js 22 or newer, then run:
+
+```bash
+sudo npm install -g @openai/codex
+codex login
 ```
 
 If Chrome is already installed somewhere nonstandard, pass its path with `--chrome-path` or set `CHROME_PATH`.
@@ -263,6 +277,8 @@ node src/scroll-video.mjs https://example.com --warmup-step 400
 ```
 
 If the capture runs in a sandboxed environment, it may need permission to access the target URL and open a local DevTools port on `127.0.0.1`.
+
+If Chromium fails inside Docker with a namespace or sandbox error, test in a normal VM or use a Docker-only Chrome wrapper that launches Chromium with `--no-sandbox`. That flag is normally a container workaround, not the recommended desktop or VM path.
 
 If a cue step fails, inspect the generated files:
 

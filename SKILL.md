@@ -18,6 +18,8 @@ node --version
 ffmpeg -version
 ```
 
+If a dependency is missing and the user wants Codex to install it, use the local package manager with approval. On macOS, use Homebrew for `node`, `ffmpeg`, and Google Chrome. On Debian or Ubuntu, install `chromium`, `chromium-sandbox`, `ffmpeg`, `git`, `ca-certificates`, and `fonts-liberation`. The tool itself has no npm package dependencies; `npm` is only needed to install Codex CLI or manage Node on a command-line machine.
+
 2. Check the CLI syntax after edits:
 
 ```bash
@@ -105,6 +107,7 @@ Prefer these controls:
 
 - The tool launches headless Chrome with a temporary profile and DevTools on `127.0.0.1`.
 - In sandboxed environments, rerun with approval if local port binding or live URL access is blocked.
+- In Docker, Chromium may fail with namespace or sandbox errors. Prefer a normal VM for install testing; for Docker-only smoke tests, use a wrapper that launches Chromium with `--no-sandbox` and pass it via `--chrome-path`.
 - Output MP4 files are ignored by git. Leave generated videos in the working tree unless the user asks to remove them.
 - For cue-driven videos, keep the `.cue` and `.mp4` in the same folder. Prefer `cues/<name>.cue` and either omit `out:` or use `out: <name>.mp4`.
 - One-shot scroll capture is deterministic: it captures fixed scroll positions and pipes PNG frames to `ffmpeg`.
