@@ -272,3 +272,7 @@ If a cue step fails, inspect the generated files:
 ```
 
 The JSON report includes the failure message, current URL, intended output path, and screenshot path.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
