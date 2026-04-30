@@ -4,45 +4,37 @@ Create an MP4 video of a web page scrolling at a steady speed. The tool opens th
 
 The default output is 1080p: `1920x1080`, `30 fps`, H.264 MP4.
 
+## Getting Started With Codex
+
+Open Codex and ask it to install the skill:
+
+```text
+Install the web scroll video skill from https://github.com/upenn/web-scroll-video
+```
+
+Restart Codex after the install finishes. Then ask Codex to check your computer:
+
+```text
+Check the web scroll video dependencies and install anything missing.
+```
+
+Then describe the video you want in plain English:
+
+```text
+Make a 60 fps 1080p video of https://zamechek.com. Pause 1 second, click Blog, scroll slowly to the bottom and back to the top, click the first Keynot post, then scroll slowly to the bottom. Show the cursor.
+```
+
+Codex will create a cue sheet, render the MP4, and keep the cue sheet and video together so revisions are easy. To revise, ask for changes the same way you would give notes to an editor, such as “make the first scroll slower,” “hide the cursor,” or “add a two second pause before the click.”
+
 ## Requirements
 
 - Node.js 22 or newer
 - Google Chrome, Chromium, or Microsoft Edge
 - `ffmpeg`
 
-No npm packages are required.
+No npm packages are required. Codex can check and help install these dependencies.
 
-## Install Dependencies With Codex
-
-After installing the skill, ask Codex:
-
-```text
-Check the web scroll video dependencies and install anything missing.
-```
-
-Codex should verify:
-
-```bash
-node --version
-ffmpeg -version
-```
-
-On macOS with Homebrew, missing dependencies can usually be installed with:
-
-```bash
-brew install node ffmpeg
-brew install --cask google-chrome
-```
-
-If Chrome is already installed somewhere nonstandard, pass its path with `--chrome-path` or set `CHROME_PATH`.
-
-## Install From GitHub
-
-To share this as a Codex skill, publish this folder to a GitHub repository. Other users can install it by asking Codex:
-
-```text
-Install the web scroll video skill from https://github.com/upenn/web-scroll-video
-```
+## Manual Install Reference
 
 Manual install:
 
@@ -51,8 +43,6 @@ mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills"
 git clone https://github.com/upenn/web-scroll-video.git \
   "${CODEX_HOME:-$HOME/.codex}/skills/web-scroll-video"
 ```
-
-Restart Codex after installing so the skill is discovered.
 
 If using the Codex skill installer helper directly:
 
@@ -63,9 +53,20 @@ python3 "${CODEX_HOME:-$HOME/.codex}/skills/.system/skill-installer/scripts/inst
   --name web-scroll-video
 ```
 
-## Quick Start
+Restart Codex after installing so the skill is discovered.
 
-Capture the Wharton home page:
+On macOS with Homebrew, missing dependencies can usually be installed with:
+
+```bash
+brew install node ffmpeg
+brew install --cask google-chrome
+```
+
+If Chrome is already installed somewhere nonstandard, pass its path with `--chrome-path` or set `CHROME_PATH`.
+
+## Command Line Quick Start
+
+Capture the Wharton home page from this repository:
 
 ```bash
 npm run capture:wharton
