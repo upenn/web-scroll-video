@@ -1,0 +1,17 @@
+{
+  "name": "web-scroller-tool",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "scroll-video": "./src/scroll-video.mjs"
+  },
+  "scripts": {
+    "capture": "node src/scroll-video.mjs",
+    "capture:wharton": "node src/scroll-video.mjs https://www.wharton.upenn.edu/ --out wharton-scroll.mp4",
+    "capture:wharton-demo": "node src/scroll-video.mjs --script examples/wharton-faculty-demo.cue"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
