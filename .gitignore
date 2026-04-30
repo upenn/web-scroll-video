@@ -4,3 +4,4 @@ node_modules/
 *.error.json
 *.error.png
 .DS_Store
+*.cue
