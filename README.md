@@ -142,6 +142,12 @@ Or run the included example:
 npm run capture:wharton-demo
 ```
 
+The included cue sheet renders this demo MP4:
+
+[![Wharton faculty directory demo video preview](examples/wharton-faculty-demo.jpg)](examples/wharton-faculty-demo.mp4)
+
+[Open the demo MP4](examples/wharton-faculty-demo.mp4).
+
 Supported cue actions:
 
 ```text
