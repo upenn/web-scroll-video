@@ -10,7 +10,10 @@
   "scripts": {
     "capture": "node src/scroll-video.mjs",
     "capture:wharton": "node src/scroll-video.mjs https://www.wharton.upenn.edu/ --out wharton-scroll.mp4",
-    "capture:wharton-demo": "node src/scroll-video.mjs --script examples/wharton-faculty-demo.cue"
+    "capture:wharton-demo": "node src/scroll-video.mjs --script examples/wharton-faculty-demo.cue",
+    "test": "node scripts/docker-smoke-test.mjs",
+    "test:docker": "node scripts/docker-smoke-test.mjs",
+    "test:docker:github": "node scripts/docker-smoke-test.mjs --source github"
   },
   "engines": {
     "node": ">=22"

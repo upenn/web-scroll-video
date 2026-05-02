@@ -3,5 +3,7 @@ node_modules/
 *.mov
 *.error.json
 *.error.png
+docker-output/
 .DS_Store
 *.cue
+!examples/wharton-faculty-demo.mp4

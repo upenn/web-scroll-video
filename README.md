@@ -239,6 +239,20 @@ One-shot scroll mode renders deterministic scroll positions, so the final video 
 
 ## Validation
 
+Run the Docker smoke test:
+
+```bash
+npm test
+```
+
+This creates `docker-output/smoke.mp4` from the current checkout in a clean Linux container. To test the public GitHub install path instead, run:
+
+```bash
+npm run test:docker:github
+```
+
+The Docker smoke test does not run or authenticate Codex. It validates the renderer with clean Linux installs of Chromium and `ffmpeg`; test Codex login separately on a VM or desktop with `codex login`.
+
 Check the generated video metadata:
 
 ```bash
