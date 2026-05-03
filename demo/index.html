@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Web Scroll Video Demo</title>
+    <meta
+      name="description"
+      content="A 1920x1080, 60 fps MP4 demo rendered with the web-scroll-video cue-sheet workflow."
+    >
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #1c1c1c;
+        --muted: #5d6167;
+        --line: #d9dde2;
+        --surface: #f6f7f8;
+        --accent: #8b1e41;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: #ffffff;
+        color: var(--ink);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+      }
+
+      main {
+        width: min(1180px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 40px 0 56px;
+      }
+
+      header {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 24px;
+        margin-bottom: 22px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(2rem, 5vw, 4.75rem);
+        line-height: 0.98;
+        font-weight: 750;
+        letter-spacing: 0;
+      }
+
+      .meta {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 8px;
+        color: var(--muted);
+        font-size: 0.94rem;
+      }
+
+      .meta span {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 6px 10px;
+        background: var(--surface);
+        white-space: nowrap;
+      }
+
+      video {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        background: #101010;
+        border: 1px solid var(--line);
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 18px;
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration-thickness: 0.08em;
+        text-underline-offset: 0.18em;
+      }
+
+      .actions a {
+        font-weight: 650;
+      }
+
+      @media (max-width: 720px) {
+        main {
+          width: min(100% - 20px, 1180px);
+          padding-top: 22px;
+        }
+
+        header {
+          display: block;
+        }
+
+        h1 {
+          margin-bottom: 14px;
+        }
+
+        .meta {
+          justify-content: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Web Scroll Video Demo</h1>
+        <div class="meta" aria-label="Video metadata">
+          <span>1920x1080</span>
+          <span>60 fps</span>
+          <span>11.75 seconds</span>
+          <span>H.264 MP4</span>
+        </div>
+      </header>
+
+      <video
+        controls
+        playsinline
+        preload="metadata"
+        poster="../examples/wharton-faculty-demo.jpg"
+      >
+        <source src="../examples/wharton-faculty-demo.mp4" type="video/mp4">
+        <a href="../examples/wharton-faculty-demo.mp4">Open the demo MP4</a>.
+      </video>
+
+      <nav class="actions" aria-label="Demo links">
+        <a href="../examples/wharton-faculty-demo.mp4">Download MP4</a>
+        <a href="../examples/wharton-faculty-demo.cue">View cue sheet</a>
+        <a href="https://github.com/upenn/web-scroll-video">GitHub repository</a>
+      </nav>
+    </main>
+  </body>
+</html>

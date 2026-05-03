@@ -142,11 +142,11 @@ Or run the included example:
 npm run capture:wharton-demo
 ```
 
-The included cue sheet renders this demo MP4:
+The included cue sheet renders this demo MP4, shown on a GitHub Pages player so the original video quality and 60 fps playback are preserved:
 
-[![Wharton faculty directory demo video preview](examples/wharton-faculty-demo.jpg)](examples/wharton-faculty-demo.mp4)
+[![Wharton faculty directory demo video preview](examples/wharton-faculty-demo.jpg)](https://upenn.github.io/web-scroll-video/demo/)
 
-[Open the demo MP4](examples/wharton-faculty-demo.mp4).
+[Watch the demo](https://upenn.github.io/web-scroll-video/demo/) or [open the MP4](examples/wharton-faculty-demo.mp4).
 
 Supported cue actions:
 
