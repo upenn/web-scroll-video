@@ -4,6 +4,14 @@ Create an MP4 video of a web page scrolling at a steady speed. The tool opens th
 
 The default output is 1080p: `1920x1080`, `30 fps`, H.264 MP4.
 
+## Demo
+
+This included cue sheet renders a 1080p, 60 fps MP4, shown on a GitHub Pages player so the original video quality is preserved:
+
+[![Wharton faculty directory demo video preview](examples/wharton-faculty-demo.jpg)](https://upenn.github.io/web-scroll-video/demo/)
+
+[Watch the demo](https://upenn.github.io/web-scroll-video/demo/) or [open the MP4](examples/wharton-faculty-demo.mp4).
+
 ## Getting Started With Codex
 
 Open Codex and ask it to install the skill:
@@ -141,12 +149,6 @@ Or run the included example:
 ```bash
 npm run capture:wharton-demo
 ```
-
-The included cue sheet renders this demo MP4, shown on a GitHub Pages player so the original video quality and 60 fps playback are preserved:
-
-[![Wharton faculty directory demo video preview](examples/wharton-faculty-demo.jpg)](https://upenn.github.io/web-scroll-video/demo/)
-
-[Watch the demo](https://upenn.github.io/web-scroll-video/demo/) or [open the MP4](examples/wharton-faculty-demo.mp4).
 
 Supported cue actions:
 
